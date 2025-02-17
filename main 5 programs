@@ -1,0 +1,77 @@
+# program no 1
+# Create two vectors
+vector1 <- c(1, 2, 3, 4, 5, 6, 7, 8, 9)
+vector2 <- c(10, 11, 12, 13, 14, 15, 16, 17, 18)
+
+# Create an array from the two vectors
+array_3x3x2 <- array(c(vector1, vector2), dim = c(3, 3, 2))
+
+# Print the second row of the second matrix
+second_row_second_matrix <- array_3x3x2[2, , 2]
+cat("Second row of the second matrix:\n", second_row_second_matrix, "\n")
+
+# Print the element in the 3rd row and 3rd column of the 1st matrix
+element_3rd_row_3rd_col_first_matrix <- array_3x3x2[3, 3, 1]
+cat("Element in the 3rd row and 3rd column of the 1st matrix:\n", element_3rd_row_3rd_col_first_matrix, "\n")
+
+#program no 2
+# Create three arrays
+array1 <- matrix(1:9, nrow = 3, byrow = TRUE)
+array2 <- matrix(10:18, nrow = 3, byrow = TRUE)
+array3 <- matrix(19:27, nrow = 3, byrow = TRUE)
+
+# Combine arrays row-wise
+combined_array <- rbind(array1, array2, array3)
+cat("Combined array:\n")
+print(combined_array)
+
+#program no 3
+# Create an array using four columns, three rows, and two tables
+array_4x3x2 <- array(1:24, dim = c(3, 4, 2))
+cat("Array with four columns, three rows, and two tables:\n")
+print(array_4x3x2)
+
+# Create a two-dimensional 5x3 array of sequence of even integers greater than 50
+array_5x3 <- matrix(seq(52, 82, by = 2), nrow = 5, ncol = 3)
+cat("Two-dimensional 5x3 array of sequence of even integers greater than 50:\n")
+print(array_5x3)
+
+#program no 4
+# Create the data frame
+exam_data <- data.frame(
+  name = c('Anastasia', 'Dima', 'Katherine', 'James', 'Emily', 'Michael', 'Matthew', 'Laura', 'Kevin', 'Jonas'),
+  score = c(12.5, 9, 16.5, 12, 9, 20, 14.5, 13.5, 8, 19),
+  attempts = c(1, 3, 2, 3, 2, 3, 1, 1, 2, 1),
+  qualify = c('yes', 'no', 'yes', 'no', 'no', 'yes', 'yes', 'no', 'no', 'yes')
+)
+
+# a. Extract 3rd and 5th rows with 1st and 3rd columns
+extracted_data <- exam_data[c(3, 5), c(1, 3)]
+cat("Extracted 3rd and 5th rows with 1st and 3rd columns:\n")
+print(extracted_data)
+
+# b. Add a new column named country
+country <- c("USA", "USA", "USA", "USA", "UK", "USA", "USA", "India", "USA", "USA")
+exam_data$country <- country
+cat("Data frame with new column 'country':\n")
+print(exam_data)
+
+#program no 5
+# Create a new data frame
+new_exam_data <- data.frame(name = c('Robert', 'Sophia'), score = c(10.5, 9), attempts = c(1, 3), qualify = c('yes', 'no'))
+
+# Add new rows to the existing data frame
+exam_data <- rbind(exam_data, new_exam_data)
+cat("Data frame after adding new rows:\n")
+print(exam_data)
+
+# Sort data frame by name and score
+sorted_exam_data <- exam_data[order(exam_data$name, exam_data$score), ]
+cat("Data frame sorted by name and score:\n")
+print(sorted_exam_data)
+
+# Save the data frame to a file and display its content
+write.csv(exam_data, "exam_data.csv", row.names = FALSE)
+read_data <- read.csv("exam_data.csv")
+cat("Content of the file 'exam_data.csv':\n")
+print(read_data)
