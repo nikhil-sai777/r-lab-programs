@@ -1,0 +1,102 @@
+#program no 11
+# Get unique elements of a given string
+given_string <- "hello world"
+unique_chars <- unique(strsplit(given_string, NULL)[[1]])
+cat("Unique characters in the string:", unique_chars, "\n")
+
+# Get unique numbers of a vector
+given_vector <- c(1, 2, 2, 3, 4, 4, 5)
+unique_numbers <- unique(given_vector)
+cat("Unique numbers in the vector:", unique_numbers, "\n")
+
+#program no 12
+# Get unique elements of a given string
+# Create three vectors a, b, c with 3 integers each
+a <- c(1, 2, 3)
+b <- c(4, 5, 6)
+c <- c(7, 8, 9)
+
+# Combine the three vectors into a 3×3 matrix
+matrix_3x3 <- cbind(a, b, c)
+cat("3×3 Matrix:\n")
+print(matrix_3x3)
+
+#program no 13
+# Create a list of random numbers in normal distribution
+random_numbers <- rnorm(100, mean = 0, sd = 1)
+
+# Count occurrences of each value (round to 2 decimal places)
+occurrences <- table(round(random_numbers, 2))
+cat("Occurrences of each value in the random numbers:\n")
+print(occurrences)
+
+#program no 14
+# Read the .csv file and display the content
+# Replace 'file.csv' with the actual file path
+data <- read.csv('file.csv')
+cat("Content of the .csv file:\n")
+print(data)
+
+#program no 15
+# Create three vectors of different types
+numeric_data <- c(1.1, 2.2, 3.3)
+character_data <- c("A", "B", "C")
+logical_data <- c(TRUE, FALSE, TRUE)
+
+# Display the content of the vectors and their type
+cat("Numeric data:", numeric_data, "\nType:", typeof(numeric_data), "\n")
+cat("Character data:", character_data, "\nType:", typeof(character_data), "\n")
+cat("Logical data:", logical_data, "\nType:", typeof(logical_data), "\n")
+
+#program no 16
+# Create a 5 x 4 matrix
+matrix_5x4 <- matrix(1:20, nrow = 5, ncol = 4)
+cat("5 x 4 Matrix:\n")
+print(matrix_5x4)
+
+# Create a 3 x 3 matrix with labels and fill by rows
+matrix_3x3 <- matrix(1:9, nrow = 3, ncol = 3, byrow = TRUE,
+                     dimnames = list(c("Row1", "Row2", "Row3"), c("Col1", "Col2", "Col3")))
+cat("3 x 3 Matrix (filled by rows):\n")
+print(matrix_3x3)
+
+# Create a 2 x 2 matrix with labels and fill by columns
+matrix_2x2 <- matrix(1:4, nrow = 2, ncol = 2, byrow = FALSE,
+                     dimnames = list(c("Row1", "Row2"), c("Col1", "Col2")))
+cat("2 x 2 Matrix (filled by columns):\n")
+print(matrix_2x2)
+
+#program no 17
+# Create an array with a vector of values and a vector of dimensions
+values <- 1:12
+dimensions <- c(3, 4)
+dim_names <- list(c("Row1", "Row2", "Row3"), c("Col1", "Col2", "Col3", "Col4"))
+array_named <- array(values, dim = dimensions, dimnames = dim_names)
+cat("Array with named dimensions:\n")
+print(array_named)
+
+#program no 18
+# Create an array with three columns, three rows, and two "tables"
+vector1 <- c(1, 2, 3, 4, 5, 6, 7, 8, 9)
+vector2 <- c(10, 11, 12, 13, 14, 15, 16, 17, 18)
+array_3x3x2 <- array(c(vector1, vector2), dim = c(3, 3, 2))
+cat("Array with two tables:\n")
+print(array_3x3x2)
+
+#program no 19
+# Create a list of elements using vectors, matrices, and a function
+my_vector <- c(1, 2, 3)
+my_matrix <- matrix(1:4, nrow = 2, ncol = 2)
+my_function <- function(x) x^2
+
+my_list <- list(my_vector = my_vector, my_matrix = my_matrix, my_function = my_function)
+cat("Content of the list:\n")
+print(my_list)
+
+#program no 20
+# Draw an empty plot
+plot(1, type = "n", xlab = "", ylab = "", xlim = c(0, 10), ylim = c(0, 10))
+
+# Draw an empty plot with specified axes limits
+plot(1, type = "n", xlab = "X-Axis", ylab = "Y-Axis", xlim = c(0, 10), ylim = c(0, 10))
+
