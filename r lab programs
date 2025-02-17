@@ -1,0 +1,99 @@
+# program no 1
+name <- readline(prompt = "Enter your name: ")
+age <- as.integer(readline(prompt = "Enter your age: "))
+cat("Name:", name, "\n")
+cat("Age:", age, "\n")
+cat("R version:", R.Version()$version.string, "\n")
+
+#program no 2
+# Display the details of objects in memory
+print(ls())
+print(objects())
+
+# program no 3
+# Create a sequence of numbers from 20 to 50
+sequence <- 20:50
+cat("Sequence of numbers from 20 to 50:", sequence, "\n")
+mean_value <- mean(20:60)
+cat("Mean of numbers from 20 to 60:", mean_value, "\n")
+sum_value <- sum(51:91)
+cat("Sum of numbers from 51 to 91:", sum_value, "\n")
+
+#program no 4
+# Create a vector with 10 random integer values between -50 and +50
+random_vector <- sample(-50:50, 10)
+cat("Random vector of 10 integer values between -50 and +50:", random_vector, "\n")
+
+#program no 5
+# Function to generate Fibonacci numbers
+fibonacci <- function(n) {
+  fib <- numeric(n)
+  fib[1] <- fib[2] <- 1
+  for (i in 3:n) {
+    fib[i] <- fib[i - 1] + fib[i - 2]
+  }
+  return(fib)
+}
+fib_numbers <- fibonacci(10)
+cat("First 10 Fibonacci numbers:", fib_numbers, "\n")
+
+#program no 6
+# Function to generate prime numbers using the Sieve of Eratosthenes
+sieve_of_eratosthenes <- function(n) {
+  primes <- rep(TRUE, n)
+  primes[1] <- FALSE
+  for (i in 2:sqrt(n)) {
+    if (primes[i]) {
+      primes[seq(i^2, n, i)] <- FALSE
+    }
+  }
+  return(which(primes))
+}
+given_number <- as.integer(readline(prompt = "Enter a number: "))
+prime_numbers <- sieve_of_eratosthenes(given_number)
+cat("Prime numbers up to", given_number, ":", prime_numbers, "\n")
+
+#program no 7
+# Print numbers from 1 to 100 with FizzBuzz rules
+for (i in 1:100) {
+  if (i %% 3 == 0 && i %% 5 == 0) {
+    cat("FizzBuzz\n")
+  } else if (i %% 3 == 0) {
+    cat("Fizz\n")
+  } else if (i %% 5 == 0) {
+    cat("Buzz\n")
+  } else {
+    cat(i, "\n")
+  }
+}
+
+#program no 8
+# Extract first 10 lowercase letters
+first_10_letters <- letters[1:10]
+cat("First 10 lowercase letters:", first_10_letters, "\n")
+last_10_letters <- toupper(letters[17:26])
+cat("Last 10 uppercase letters:", last_10_letters, "\n")
+letters_22_to_24 <- toupper(letters[22:24])
+cat("Letters 22nd to 24th in uppercase:", letters_22_to_24, "\n")
+
+#program no 9
+# Function to find factors of a given number
+find_factors <- function(n) {
+  factors <- which(n %% 1:n == 0)
+  return(factors)
+}
+number <- as.integer(readline(prompt = "Enter a number: "))
+factors <- find_factors(number)
+cat("Factors of", number, ":", factors, "\n")
+
+#program no 10
+# Function to find the maximum and minimum value of a given vector
+find_max_min <- function(vector) {
+  max_value <- max(vector)
+  min_value <- min(vector)
+  return(list(max = max_value, min = min_value))
+}
+vector <- c(10, 20, 5, 25, 15, 30)
+max_min <- find_max_min(vector)
+cat("Maximum value of the vector:", max_min$max, "\n")
+cat("Minimum value of the vector:", max_min$min, "\n")
